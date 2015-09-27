@@ -34,8 +34,9 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->check()) {
-            return redirect('/home');
+        if (!$this->auth->check()) {
+            if(\Request::getPathInfo() != '/files/login' && \Request::getPathInfo() != '/files/register')
+                return redirect('/files/login');
         }
 
         return $next($request);

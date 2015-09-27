@@ -1,9 +1,10 @@
 @extends('main.master')
 
+@section('title', 'kayden files')
+
+@section('title-lead', 'Share your private Files')
+
 @section('content')
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
+
+
 @stop

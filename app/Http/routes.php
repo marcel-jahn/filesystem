@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/files');
+});
+
+Route::group(['prefix' => 'files'], function()
+{
+	Route::controller('/user', 'FileuploadController');
+
+	Route::controller('/file', 'FileController');
+	
+	Route::controller('/', 'Auth\AuthController');
+
 });

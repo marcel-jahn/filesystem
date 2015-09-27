@@ -10,7 +10,11 @@ var elixir = require('laravel-elixir');
  | file for our application, as well as publishing vendor resources.
  |
  */
-
+elixir.config.sourcemaps = false;
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix
+    	.scripts(['jquery/plugins/jquery.ui.widget.js', 
+    		'jquery/plugins/jquery.knob.js', 
+    		'jquery/plugins/jquery.iframe-transport.js',  
+    		'jquery/plugins/jquery.fileupload.js', ])
 });
