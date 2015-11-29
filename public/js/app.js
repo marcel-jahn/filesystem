@@ -86,6 +86,8 @@ $(function(){
 
     });
 
+	
+    $('.btn').click(function(){ window.location.href = $(this).find('a').attr('href'); });
 
     // Prevent the default action when a file is dropped on the window
     $(document).on('drop dragover', function (e) {
